@@ -86,8 +86,8 @@ async function deleteProduct(idx){
   if(confirm("Are you sure you want to delete?")){
     let deletedItem = itemList[idx].name;
     alertMessage(`${deletedItem} was deleted from the database!`)
-    await ajax("DELETE","",`Products/${itemList[idx]._id}`);
-    ajax('GET','','Products', drawAdmin);
+    await ajax("DELETE","",`products/${itemList[idx]._id}`);
+    ajax('GET','','products', drawAdmin);
   }
 }
 
@@ -144,7 +144,7 @@ async function saveProductFirebase(idx){
       alertMessage("Product Saved!");
     }
 
-    ajax('GET','','Products', drawAdmin);
+    ajax('GET','','products', drawAdmin);
     hideDetails();
   } else {
     alertMessage("All the inputs are needed, please check that the price, discount and stock to be numbers")

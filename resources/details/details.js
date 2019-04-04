@@ -40,6 +40,8 @@ async function drawDetails(idx,page){
   `
   if(page === "cart"){
     document.querySelector("#details-stock").innerHTML = productsInCart[idx].stock;
+  } else {
+    document.querySelector("#details-stock").innerHTML = itemList[idx].stock;
   }
   existsInCart(idx, "details");
 
@@ -47,18 +49,18 @@ async function drawDetails(idx,page){
 }
 
 function addToCartToAlreadyInCart(button){
-    if(button.innerText === "Add to Cart"){
-      let addToCartButton = document.querySelector(".add-to-cart-button");
-      addToCartButton.innerText = "Already in cart";
-      addToCartButton.setAttribute("onClick", "");
-      addToCartButton.style.backgroundColor ="#ffae32";
-      let stockDisplay = document.querySelector(".details-item-stock>span");
-      stockDisplay.innerText = parseInt(stockDisplay.innerText) - 1;
-      autoRedrawComponent();
-    } else {
-     button.setAttribute("onClick", "");
-     button.style.backgroundColor ="#ffae32";
-   }
+  if(button.innerText === "Add to Cart"){
+    let addToCartButton = document.querySelector(".add-to-cart-button");
+    addToCartButton.innerText = "Already in cart";
+    addToCartButton.setAttribute("onClick", "");
+    addToCartButton.style.backgroundColor ="#ffae32";
+    let stockDisplay = document.querySelector(".details-item-stock>span");
+    stockDisplay.innerText = parseInt(stockDisplay.innerText) - 1;
+    autoRedrawComponent();
+  } else {
+   button.setAttribute("onClick", "");
+   button.style.backgroundColor ="#ffae32";
+ }
 }
 
 function autoRedrawComponent(){

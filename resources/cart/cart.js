@@ -119,7 +119,7 @@ async function addToCart(idx) {
       productId: itemList[idx]._id,
       quantity: 1
     }
-    await ajax("POST",JSON.stringify(cartObject),`cart/`);
+    await ajax("POST",JSON.stringify(cartObject),`cart`);
 
     addToCartToAlreadyInCart(button);
 
