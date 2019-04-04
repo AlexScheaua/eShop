@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="resources/grid.css">
+    <link rel="stylesheet" href="resources/home/home.css">
+    <link rel="stylesheet" href="resources/products/products.css">
+    <link rel="stylesheet" href="resources/details/details.css">
+    <link rel="stylesheet" href="resources/admin/admin.css">
+    <link rel="stylesheet" href="resources/cart/cart.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> <!-- Font awesome -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> <!-- Slider CSS -->
+    <link rel="stylesheet" href="resources/slider/slider.css">  <!-- Slider CSS -->
+
+    <title>eShop</title>
+  </head>
+  <body onload="loadComponent('resources/home/home.html');mapIframeLoad();" onresize="onResize()">
+    <header>
+      <div class="main-carousel">
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/1.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/2.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/3.jpeg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/4.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/5.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/6.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/7.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/8.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/9.jpg" alt="" />
+        </div>
+        <div class="main-carousel-cell">
+          <img src="resources/slider/photos/10.jpg" alt="" />
+        </div>
+      </div>
+      <img id="overslide-logo" src="resources/logo-full.png" alt="">
+    </header>
+
+    <div id="nav-container" class="d-flex justify-between" onclick="cartIndicatorOnMenuOpen()">
+      <div id="logo-icon" class="d-flex align-center"><img src="resources/logo-full.png" onclick="loadComponent('resources/home/home.html');hideMenu()" alt=""></div>
+
+      <div id="cart-button-container" class="d-flex align-center" onclick="loadComponent('resources/cart/cart.html');hideMenu()">
+        <svg viewBox="0 -31 512.00026 512" xmlns="http://www.w3.org/2000/svg"><path d="m164.960938 300.003906h.023437c.019531 0 .039063-.003906.058594-.003906h271.957031c6.695312 0 12.582031-4.441406 14.421875-10.878906l60-210c1.292969-4.527344.386719-9.394532-2.445313-13.152344-2.835937-3.757812-7.269531-5.96875-11.976562-5.96875h-366.632812l-10.722657-48.253906c-1.527343-6.863282-7.613281-11.746094-14.644531-11.746094h-90c-8.285156 0-15 6.714844-15 15s6.714844 15 15 15h77.96875c1.898438 8.550781 51.3125 230.917969 54.15625 243.710938-15.941406 6.929687-27.125 22.824218-27.125 41.289062 0 24.8125 20.1875 45 45 45h272c8.285156 0 15-6.714844 15-15s-6.714844-15-15-15h-272c-8.269531 0-15-6.730469-15-15 0-8.257812 6.707031-14.976562 14.960938-14.996094zm312.152343-210.003906-51.429687 180h-248.652344l-40-180zm0 0"/><path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/><path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
+        </svg><span id="cart-indicator"></span><span>Shopping Cart</span>
+      </div>
+
+      <ul id="navbar" class="d-flex">
+        <li><button class="navbar-item menu-button" onclick="dropDownMenuSticky();">Menu</button></li></li>
+        <li><button class="navbar-item" onclick="loadComponent('resources/products/products.html');hideMenu()">Products</button></li>
+        <li><button class="navbar-item" onclick="loadComponent();hideMenu()">Contact</button></li>
+        <li><button class="navbar-item" onclick="loadComponent('resources/admin/admin.html');hideMenu()">Admin</button></li>
+      </ul>
+    </div>
+
+    <div id="search-container" class="d-flex justify-center">
+      <div id="search-box" class="d-flex justify-center">
+        <input id="search-input" class="align-self-bottom" type="text" onkeyup="searchProducts()" placeholder="Search here...">
+        <label for="search-input" class="align-self-center"><i class="fas fa-search"></i></label>
+      </div>
+    </div>
+
+    <div id="content" class="d-flex justify-center col-xs-12"></div>
+
+    <div id="product-details-background" class="justify-center align-center" onclick="hideDetails();">
+      <div id="product-details-container" class="col-xs-12 col-sm-11 col-md-10">
+        <div id="product-details-exit" class="d-flex justify-end">
+          <i class="fas fa-times" onclick="hideDetails()"></i>
+        </div>
+        <div id="product-details-content" class="d-flex flex-wrap justify-center">
+
+        </div>
+      </div>
+    </div>
+
+    <div id="alert-box-container"></div>
+
+    <div class="loading-gif d-flex justify-center align-center">
+      <svg width="100px" height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-double-ring" style="filter: drop-shadow(0 0 3px #888);"><circle cx="50" cy="50" ng-attr-r="{{config.radius}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.c1}}" ng-attr-stroke-dasharray="{{config.dasharray}}" fill="none" stroke-linecap="round" r="20" stroke-width="5" stroke="#6fd5d5" stroke-dasharray="31.41592653589793 31.41592653589793" transform="rotate(23.6822 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle><circle cx="50" cy="50" ng-attr-r="{{config.radius2}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-dasharray="{{config.dasharray2}}" ng-attr-stroke-dashoffset="{{config.dashoffset2}}" fill="none" stroke-linecap="round" r="14" stroke-width="5" stroke="#333" stroke-dasharray="21.991148575128552 21.991148575128552" stroke-dashoffset="21.991148575128552" transform="rotate(-23.6822 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+      <span align-self-center style="font-weight:bold; font-size: 32px; text-shadow:0 0 3px #666;">Loading...</span>
+    </div>
+
+
+    <div id="footer">
+      <div class="d-flex flex-wrap">
+        <div class="address col-sm-6 col-xs-12 d-flex flex-column align-center justify-center">
+          <div>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fas fa-envelope"></i></a>
+          </div>
+          <h2>1700-1748 Channing Ave</h2>
+          <h3>Palo Alto, CA 94303</h3>
+          <h4>USA</h4>
+        </div>
+        <div class="map d-flex justify-center col-sm-6 col-xs-12"></div>
+      </div>
+      <div id="copyright" class="d-flex justify-center align-center">
+        <span>© 2019 <a href="mailto:alex.scheaua22@gmail.com"> Alex Scheaua</a></span>
+      </div>
+    </div>
+
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="resources/home/home.js"></script>
+    <script type="text/javascript" src="resources/products/products.js"></script>
+    <script type="text/javascript" src="resources/details/details.js"></script>
+    <script type="text/javascript" src="resources/admin/admin.js"></script>
+    <script type="text/javascript" src="resources/cart/cart.js"></script>
+
+    </script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>     <!-- Slider Script -->
+    <script type="text/javascript" src="resources/slider/slider.js">  <!-- Slider Script -->
+
+    </script>
+  </body>
+</html>

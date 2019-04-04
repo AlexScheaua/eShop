@@ -1,0 +1,130 @@
+/* Butoane Detalii */
+
+.details-buttons {
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  background-color: #eee;
+  color: var(--navBackgroundGrey);
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 3px #aaa;
+}
+
+.details-buttons:hover {
+  background-color: var(--navBackgroundGrey);
+  color: var(--lightBlue);
+  box-shadow: 0 1px 3px #888;
+  transition-duration: 0.3s;
+}
+
+
+/* CSS pagina details */
+
+#product-details-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(50,50,50, 0.8);
+  cursor: pointer;
+}
+
+#product-details-container {
+  max-height: 100%;
+  overflow: auto;
+  background-color: #fff;
+  cursor: default;
+  box-shadow: 0 0 5px #111;
+}
+
+#product-details-exit i{
+  padding: 5px 8px 0 0;
+  zoom: 1.2;
+  color: var(--navBackgroundGrey);
+}
+
+#product-details-exit i:hover{
+  color: var(--lightBlue);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+#product-details-content {
+  min-height: 500px;
+}
+
+#product-details-info {
+  padding: 20px;
+}
+
+#product-details-slider {
+  max-height: 500px;
+}
+
+.details-title {
+  font-weight: 100;
+  font-size: 32px;
+  color: var(--hoverBlack);
+}
+
+.details-item-price-stock {
+    margin: 40px 0;
+    box-shadow: 0 0 5px #aaa;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.details-item-price-stock>p {
+  text-align: center;
+}
+
+.details-item-stock {
+  color: #090;
+  font-size: 20px;
+}
+
+.details-description-title {
+  font-size: 22px;
+  margin: 8px 0;
+  color: var(--hoverBlack);
+  text-decoration: underline;
+}
+
+.details-item-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--priceBlue);
+  text-shadow: 0 0 3px #ddd;
+}
+
+.add-to-cart {
+  height: 26px;
+}
+
+.add-to-cart-button {
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid var(--lightBlue);
+  background-color: #fff;
+  color: var(--navBackgroundGrey);
+  padding: 6px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  align-items: flex-end;
+  box-shadow: 0 1px 3px #ddd;
+}
+
+.add-to-cart-button:hover {
+  color: var(--navBackgroundGrey);
+  background-color: var(--lightBlue);
+  fill: var(--navBackgroundGrey);
+  box-shadow: 0 1px 3px #888;
+  transition-duration: 0.3s;
+}

@@ -1,0 +1,119 @@
+#cart-container {
+  background-color: #fff;
+  box-shadow: 0 0 5px #aaa;
+  padding: 20px 0;
+}
+
+.cart-items-list-item {
+  padding: 0 20px;
+  margin: 10px 10px;
+  max-height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.cart-items-list-images {
+  width: 10%;
+}
+
+.cart-items-list-images:hover {
+  cursor: pointer;
+}
+
+.cart-items-list-name {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+
+.cart-items-list-name:hover {
+  cursor: pointer;
+  color: var(--lightBlue);
+  transition-duration: 0.3s;
+}
+
+.cart-items-list-button {
+  padding: 5px 7px;
+  background-color: #eee;
+  color: var(--navBackgroundGrey);
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 3px #aaa;
+}
+
+.cart-items-list-button:hover {
+  background-color: var(--navBackgroundGrey);
+  color: var(--lightBlue);
+  box-shadow: 0 1px 3px #888;
+  transition-duration: 0.3s;
+}
+
+.cart-items-list-price {
+  width: 5%;
+  margin-left: 10px;
+}
+
+.cart-checkout-container {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  min-height: 7.7vw;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  background-color: #bfefef;
+}
+
+.cart-checkout-container p:not(.total-price){
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.total-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.checkout-button {
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  background-color: #eee;
+  color: var(--navBackgroundGrey);
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 3px #aaa;
+}
+
+.checkout-button:hover{
+  background-color: var(--navBackgroundGrey);
+  color: var(--lightBlue);
+  box-shadow: 0 1px 3px #888;
+  transition-duration: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+  .cart-items-list-item {
+    padding: 0 20px 0 0;
+    margin: 10px 0;
+  }
+
+  .cart-items-list-name {
+    width: 50%;
+  }
+
+  .cart-items-list-price {
+    width: 5%;
+    margin: 0 10px 0 0;
+  }
+
+  .cart-checkout-container {
+    padding: 0 20px;
+    margin: 10px 0px;
+    min-height: 100px;
+  }
+}

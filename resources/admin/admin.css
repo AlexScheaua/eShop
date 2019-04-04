@@ -1,0 +1,73 @@
+#adminPage {
+  background-color: #ccc;
+  box-shadow: 0 0 10px #888;
+  min-height: 500px;
+  padding: 20px;
+}
+
+#adminPage h2{
+  font-size: 32px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  padding: 10px 10px 10px 10px;
+  color: var(--navBackgroundGrey);
+  text-shadow: 0 0 5px #aaa;
+  height: auto;
+}
+
+.admin-buttons.add {
+  max-height: 35px;
+}
+
+.admin-buttons, .add-edit-form button {
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  background-color: #eee;
+  color: var(--navBackgroundGrey);
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 3px #aaa;
+}
+
+.admin-buttons:hover, .add-edit-form button:hover {
+  background-color: var(--navBackgroundGrey);
+  box-shadow: 0 1px 3px #888;
+  transition-duration: 0.3s;
+}
+
+.admin-buttons.add:hover, .add-edit-form button:hover {
+  color: var(--priceBlue);
+}
+
+.admin-buttons.edit:hover {
+  color: #9cd196;
+}
+
+.admin-buttons.delete:hover {
+  color: #d36666;
+}
+
+.add-edit-form {
+  padding: 10px;
+}
+
+.add-edit-form span {
+  color: var(--priceBlue);
+  font-weight: bold;
+}
+
+.add-edit-form input,.add-edit-form textarea{
+  border: none;
+  background-color: #eee;
+  width: 90%;
+  font-size: 20px;
+  margin: 3px;
+}
+
+.add-edit-form button{
+  margin: 15px;
+}

@@ -1,0 +1,28 @@
+<iframe onload="ajax('GET','','Products', drawAdmin)" style="display:none;"></iframe>
+
+
+<div id="adminPage" class="col-xs-12 col-sm-10 col-md-9">
+  <div class="d-flex justify-between align-center">
+    <h2>ADMIN PAGE</h2>
+    <button class="admin-buttons add" onclick="addEditProduct()">Add Product</button>
+  </div>
+  <div class="sort-box d-flex justify-around">
+    <label for="">Price:
+      <select name="" id="priceSortSelect" onchange="sort('price',this.value)">
+        <option>none</option>
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+      </select>
+    </label>
+    <label for="">Name:
+      <select name="" id="nameSortSelect" onchange="sort('name',this.value)">
+        <option>none</option>
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+      </select>
+    </label>
+  </div>
+  <div id="admin-content" class="d-flex flex-wrap">
+
+  </div>
+</div>

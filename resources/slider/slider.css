@@ -1,0 +1,36 @@
+.main-carousel {
+  background: #333;
+}
+
+.flickity-viewport {
+  display: block;
+  height: 30vw;
+}
+
+.main-carousel-cell {
+  margin-right: 20px;
+  overflow: hidden;
+  height: 30vw;
+}
+
+.main-carousel-cell img {
+  height: 100%;
+}
+
+.flickity-page-dots {
+  bottom: 20px;
+}
+
+.details-carousel-cell img {
+  height: 400px;
+}
+
+@media only screen and (max-width: 768px) {
+  .flickity-viewport {
+    height: 50vw;
+  }
+
+  .main-carousel-cell {
+    height: 50vw;
+  }
+}
