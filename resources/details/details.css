@@ -33,6 +33,7 @@
   bottom: 0;
   background-color: rgba(50,50,50, 0.8);
   cursor: pointer;
+  z-index: 1;
 }
 
 #product-details-container {

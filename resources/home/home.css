@@ -32,6 +32,17 @@
   margin: 10px 2px;
   padding-bottom: 5px;
   border-radius: 5px;
+  position: relative;
+  padding: 5px 0;
+}
+
+.out-of-stock {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(50,50,50,0.9);
+  color: var(--textWhite);
+  font-weight: bold;
 }
 
 .home-item:first-child {

@@ -1,8 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   outline: none;
 }
 
@@ -51,6 +53,7 @@
   box-shadow: 0px 0px 10px var(--navBackgroundGrey);
   top: 0;
   background-color: var(--navBackgroundGrey);
+  z-index: 1;
 }
 
 #logo-icon {
@@ -144,6 +147,7 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 53px;
+  z-index: 1;
 }
 
 #search-box {

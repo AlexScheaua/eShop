@@ -28,6 +28,7 @@
   border-radius: 5px;
   border-left: solid 3px #ccc;
   border-right: solid 3px #ccc;
+  position: relative;
 }
 
 .products-item-img img {

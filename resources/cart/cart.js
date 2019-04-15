@@ -1,7 +1,9 @@
 async function drawCart(){
   productsInCart = [];
   for(let item in cartList){
-    await ajax("GET","",`products/${cartList[item].product}`);
+    if(cartList.hasOwnProperty(item)){
+      await ajax("GET","",`products/${cartList[item].product}`);
+    }
   }
 
   let totalPrice = 0;
@@ -28,7 +30,7 @@ async function drawCart(){
       </li>
     `
     let cartItemslistStockSelect = document.querySelectorAll(".cart-items-list-stock")[document.querySelectorAll(".cart-items-list-stock").length-1];
-    for(let i = 0; i < itemList[product].stock + cartList[product].quantity; i++){
+    for(let i = 0; i < productsInCart[product].stock + cartList[product].quantity; i++){
       if(i+1 == cartList[product].quantity){
         cartItemslistStockSelect.innerHTML += `
           <option value="${i+1}" selected="selected">${i+1}</option>
@@ -127,10 +129,24 @@ async function addToCart(idx) {
     await ajax("GET",'','products');
   } else {
     alertMessage("This product is not in stock");
+    button.disabled = false;
   }
 }
 
-function checkout(){
-  alert("You will be redirected to an external page");
-  window.open('https://scoalainformala.ro', '_blank');
+async function checkout(){
+  alertMessage("The products were bought!")
+  for(let product in cartList){
+    if(cartList.hasOwnProperty(product)){
+      for(let item in itemList){ //setez inCart = false
+        if(itemList.hasOwnProperty(item) && itemList[item].inCart == true){
+          itemList[item].stock = productsInCart[product].stock;
+          itemList[item].inCart = false;
+          await ajax("PUT",JSON.stringify(itemList[item]),`products/${itemList[item]._id}`)
+        }
+      }
+      await ajax("DELETE",'',`cart/${cartList[product]._id}`);
+    }
+  }
+  productsInCart = [];
+  ajax("GET","","cart",drawCart);
 }
