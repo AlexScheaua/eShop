@@ -33,7 +33,7 @@ function drawProducts(){
           `
       }
     }
-    existsInCart(product);
+    existsInCart(product, "products");
     if(itemList[product].stock == 0){
       let lastItem = document.querySelectorAll(".products-item");
       lastItem[lastItem.length-1].innerHTML += `
