@@ -33,7 +33,7 @@ function dropDownMenuSticky(){
 }
 
 function drawSearch(){
-  if(document.querySelector("#cart-container")){
+  if(document.querySelector("#cart-container") || document.querySelector("#contact-container")){
     document.querySelector("#search-container").style.display = "none";
   } else {
     document.querySelector("#search-container").style.display = "flex";
