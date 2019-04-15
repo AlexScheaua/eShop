@@ -99,13 +99,7 @@ function existsInCart(idx, page){
       addToCartButton.style.backgroundColor ="#ffae32";
       let stockDisplay = document.querySelector(".details-item-stock>span");
     }
-  } else if(page === "home"){
-    var cartButtons = document.querySelectorAll(".product-to-cart-button");
-    if(itemList[idx].inCart && itemList[idx].discount != 0){
-      cartButtons[cartButtons.length - 1].setAttribute("onClick", "");
-      cartButtons[cartButtons.length - 1].style.backgroundColor ="#ffae32";
-    }
-  } else if(page === "products"){
+  } else {
     var cartButtons = document.querySelectorAll(".product-to-cart-button");
     if(itemList[idx].inCart){
       cartButtons[cartButtons.length - 1].setAttribute("onClick", "");
