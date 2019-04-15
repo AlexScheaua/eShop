@@ -233,6 +233,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(50,50,50, 0.8);
+  z-index: 1;
 }
 
 .alert-box {
