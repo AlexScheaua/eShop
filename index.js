@@ -32,6 +32,14 @@ function dropDownMenuSticky(){
   }
 }
 
+function drawSearch(){
+  if(document.querySelector("#cart-container")){
+    document.querySelector("#search-container").style.display = "none";
+  } else {
+    document.querySelector("#search-container").style.display = "flex";
+  }
+}
+
 function alertMessage(message){
   let alertBox = document.querySelector("#alert-box-container");
   alertBox.innerHTML = `
@@ -89,7 +97,7 @@ function searchProducts(){
       itemList[product].existsInSearch = "yes"
     }
   }
-  
+
   if(document.querySelector("#homePage")){
     drawHome();
   } else if(document.querySelector("#productsPage")){
