@@ -25,13 +25,15 @@ function drawHome(){
             </div>
         </div>
         `
-      existsInCart(product, "home");
-      }
-      if(itemList[product].stock == 0){
-        let lastItem = document.querySelectorAll(".home-item");
-        lastItem[lastItem.length-1].innerHTML += `
-          <p class="out-of-stock d-flex justify-center align-center">Out of Stock</p>
-        `
+
+        existsInCart(product, "home");
+        
+        if(itemList[product].stock == 0){
+          let lastItem = document.querySelectorAll(".home-item");
+          lastItem[lastItem.length-1].innerHTML += `
+            <p class="out-of-stock d-flex justify-center align-center">Out of Stock</p>
+          `
+        }
       }
     }
   }

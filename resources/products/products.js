@@ -32,13 +32,13 @@ function drawProducts(){
           <p class="products-item-price-text">${itemList[product].price.toLocaleString('de-DE')} RON</p>
           `
       }
-    }
-    existsInCart(product, "products");
-    if(itemList[product].stock == 0){
-      let lastItem = document.querySelectorAll(".products-item");
-      lastItem[lastItem.length-1].innerHTML += `
-        <p class="out-of-stock d-flex justify-center align-center">Out of Stock</p>
-      `
+      existsInCart(product, "products");
+      if(itemList[product].stock == 0 ){
+        let lastItem = document.querySelectorAll(".products-item");
+        lastItem[lastItem.length-1].innerHTML += `
+          <p class="out-of-stock d-flex justify-center align-center">Out of Stock</p>
+        `
+      }
     }
   }
   setLoadingGif(false);
